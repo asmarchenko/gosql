@@ -17,11 +17,13 @@ Utility tools for working with sql databases
 ## MySQL examples:
 
 Create connection:
-  `db, err = gosql.NewMySQLConnection("localhost", 3306, "username", "password", "dbname")
+  `
+  db, err = gosql.NewMySQLConnection("localhost", 3306, "username", "password", "dbname")
   `
 
 Create connections pool:
-  `config := gosql.NewMySQLConfig("localhost", 3306, "username", "password", "dbname")
+  `
+  config := gosql.NewMySQLConfig("localhost", 3306, "username", "password", "dbname")
   poolSize := 100
 	pool, err := gosql.NewMySQLConnectionPool(poolSize, config)
   defer pool.CloseAll()
@@ -32,7 +34,8 @@ Create connections pool:
   `
   
 Working with MySQL HANDLER:
-  `handler := dBase.CreateMySQLHandler("table_name")
+  `
+  handler := dBase.CreateMySQLHandler("table_name")
 	defer handler.Close()
 	
 	for handler.HasNext() {
@@ -41,8 +44,10 @@ Working with MySQL HANDLER:
 			......
 		}
 	}
-  `
+   `
 
 ## SQLite3 Databases:
 Create connection:
-  `db, err := gosql.NewSQLiteConnection("/tmp/sqlite.db")`
+  `
+  db, err := gosql.NewSQLiteConnection("/tmp/sqlite.db")
+  `
