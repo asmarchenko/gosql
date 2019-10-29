@@ -182,9 +182,9 @@ func answerError(err error) *SQLError {
 
 	mysqlError, isMySQLError := err.(*mysql.MySQLError)
 	if isMySQLError {
-		return &SQLError{Code:int(mysqlError.Number), Message:mysqlError.Message}
+		return &SQLError{Code:int(mysqlError.Number), Message:mysqlError.Message, error:err}
 	} else {
-		return &SQLError{Code:0, Message:err.Error()}
+		return &SQLError{Code:0, Message:err.Error(), error:err}
 	}
 }
 
